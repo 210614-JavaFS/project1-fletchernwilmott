@@ -35,10 +35,31 @@ reimb_amount numeric(20,2) NOT NULL,
 reimb_submitted timestamp NOT NULL,
 reimb_resolved timestamp,
 reimb_description varchar(250),
-reimb_receipt bytea,
 reimb_author integer NOT NULL REFERENCES ers_users(ers_user_id),
 reimb_resolver integer REFERENCES ers_users(ers_user_id),
 reimb_status_id integer REFERENCES ers_reimbursement_status(reimb_status_id), 
 reimb_type_id integer NOT NULL REFERENCES ers_reimbursement_type(reimb_type_id)
 )
+
+INSERT INTO ers_reimbursement_status
+	VALUES (1, 'pending'),
+	(2, 'resolved');
+	
+INSERT INTO ers_reimbursement_type
+	VALUES (1, 'lodging'),
+	(2, 'travel'),
+	(3, 'food'),
+	(4, 'other');
+	
+INSERT INTO ers_user_roles
+	VALUES (1, 'employee'),
+	(2, 'manager');
+
+INSERT INTO ers_users
+	VALUES (1, 'fwilmott', 'password', 'fletcher', 'wilmott', 'fwilmottct@gmail.com', '2');
+	
+INSERT INTO ers_reimbursement
+	VALUES (1, 20.21, current_timestamp, current_timestamp, 'test reimbursment', 1, 1, 2, 3);
+
+
 

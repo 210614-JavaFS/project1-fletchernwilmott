@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up</title>
+        <!-- Use this for css bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Register</h2>
+                    <p>Please fill out this form to create an account</p>
+                    <!-- action attribute specifies where to send the form data, either an absolute url or a relative url-->
+                    <!-- the method attribute specifies how to send form-data-->
+                    <!-- The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post")-->
+                    <form class="form-control">
+                        <!-- classes are used to group elements so they can be changed with a single line in a style sheet-->
+                        <div class="form-group">
+                            <label>ERS User ID</label>
+                            <!-- input tag creates a box for user input in a form-->
+                            <!-- type="text" attribute specifies what kind of input is accepted, there is a list of input types online-->
+                            <!-- the "name" attribute specifies the name of an <input> element-->
+                            <!-- the name attribute is used to reference elements in a JavaScript, or to reference form data after a form is submitted-->
+                            <input type="number" name="userid" class="form-control" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label>ERS Username</label>
+                            <input type="text" name="username" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" name="first-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" name="last-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Role ID (1 for employee, 2 for manager)</label>
+                            <input type="number" name="roleid" class="form-control" min="1" max="2" required>
+                        </div>
+                        <div class="form-group">
+                            <button id="registerButton" class="btn btn-success">Register</button>
+                        </div>
+                        <p>Already have an account? <a href="Login.html">Login here</a>.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
