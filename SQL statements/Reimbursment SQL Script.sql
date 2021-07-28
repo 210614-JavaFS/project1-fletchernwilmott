@@ -44,6 +44,7 @@ reimb_type_id integer NOT NULL REFERENCES ers_reimbursement_type(reimb_type_id)
 INSERT INTO ers_reimbursement_status
 	VALUES (1, 'pending'),
 	(2, 'resolved');
+	(3, 'denied');
 	
 INSERT INTO ers_reimbursement_type
 	VALUES (1, 'lodging'),

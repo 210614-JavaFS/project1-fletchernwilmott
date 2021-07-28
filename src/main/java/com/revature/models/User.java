@@ -1,6 +1,6 @@
 package com.revature.models;
 
-public class Users {
+public class User {
 
 	int ersUserId;
 	String ersUsername;
@@ -10,7 +10,7 @@ public class Users {
 	String userEmail;
 	int userRoleId;
 	
-	public Users(int ersUserId, String ersUsername, String ersPassword, String userFirstName, String userLastName,
+	public User(int ersUserId, String ersUsername, String ersPassword, String userFirstName, String userLastName,
 			String userEmail, int userRoleId) {
 		super();
 		this.ersUserId = ersUserId;
@@ -22,7 +22,7 @@ public class Users {
 		this.userRoleId = userRoleId;
 	}
 	
-	public Users() {
+	public User() {
 		super();
 	}
 
@@ -104,7 +104,7 @@ public class Users {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Users other = (Users) obj;
+		User other = (User) obj;
 		if (ersPassword == null) {
 			if (other.ersPassword != null)
 				return false;
