@@ -18,13 +18,14 @@ public class LoginController extends HttpServlet {
 
 	private static UserService userService = new UserService();
 	
-	// how to map?
 	private ObjectMapper objectMapper = new ObjectMapper();
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		User user = new User();
+		
+		String json = objectMapper.writeValueAsString(user);
 		
 		if(userService.login(user) == 1) {
 			HttpSession session = request.getSession();
