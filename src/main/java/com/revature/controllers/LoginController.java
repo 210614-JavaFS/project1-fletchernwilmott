@@ -20,6 +20,8 @@ public class LoginController extends HttpServlet {
 	
 	private ObjectMapper objectMapper = new ObjectMapper();
 	
+	//cant figure out how to send info to DB
+	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
