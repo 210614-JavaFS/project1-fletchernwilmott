@@ -21,7 +21,7 @@ public class LoginController extends HttpServlet {
 	private ObjectMapper objectMapper = new ObjectMapper();
 	
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		User user = new User();
 		
