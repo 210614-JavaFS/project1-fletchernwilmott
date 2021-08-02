@@ -4,6 +4,7 @@
         <title>Sign Up</title>
         <!-- Use this for css bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="shortcut icon" href="#">
     </head>
 
     <body>
@@ -21,13 +22,14 @@
                             <label>Password</label>
                             <input type="password" name="password" class="form-control" required>
                         </div>
-                        <div class="form-group">
-                            <input id="loginButton" type="submit" name="submit" class="btn btn-primary" value="Submit">
-                        </div>
                         <p>Don't have an account? <a href="Register.html">Make an account here</a>.</p>
                     </form>
+                    <input id="loginButton" type="submit" name="submit" class="btn btn-primary" value="Submit">
+                    <!-- move button here -->
+                    <!-- pull the input fields into a JS object. then send the object to java as JSON, parse json -->
                 </div>
             </div>
         </div>
+        <script src='Login.js'></script>
     </body>
 </html>

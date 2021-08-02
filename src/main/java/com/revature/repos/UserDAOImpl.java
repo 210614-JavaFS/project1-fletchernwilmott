@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import com.revature.models.User;
 import com.revature.utils.ConnectionUtil;
@@ -17,33 +18,29 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public int login(String username, String password) {
-		try(Connection conn = ConnectionUtil.getConnection()){
-			String sql = "SELECT ers_user_id FROM ers_users WHERE ers_username = ? AND ers_password = ?;";
+	public int login(User user) {
+		try (Connection conn = ConnectionUtil.getConnection()){
+			
+			String sql = "SELECT user_role_id FROM ers_users WHERE ers_username = ? AND ers_password = ?;";
 			
 			PreparedStatement statement = conn.prepareStatement(sql);
 			
-			statement.setString(1, username);
-			statement.setString(2, password);
+			statement.setString(1, user.getErsUsername());
+			statement.setString(2, user.getErsPassword());
 			
 			ResultSet result = statement.executeQuery();
 			
-			// if anything comes back it means we found a match
 			if(result.next()) {
-				int userId = result.getInt(1);
-				System.out.println("Login successful");
-				return userId;
-			}
-			else {
-				System.out.println("Couldn't find that username or password, or they didn't match");
-				return 0;
+				return 1;
 			}
 		}
-		catch(SQLException e) {
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return 0;
+		
 	}
+
 
 	@Override
 	public boolean addUser(User user) {

@@ -12,8 +12,8 @@ public class UserService {
 		return userDAO.findUsername(ersUsername);
 	}
 
-	public int login(String username, String password) {
-		return userDAO.login(username, password);
+	public int login(User user) {
+		return userDAO.login(user);
 	}
 	
 	public boolean addUser(User user) {

@@ -5,7 +5,7 @@ import com.revature.models.User;
 public interface UserDAO {
 
 	User findUsername(String ersUsername);
-	int login(String username, String password);
+	int login(User user);
 	boolean addUser(User user);
 
 }
